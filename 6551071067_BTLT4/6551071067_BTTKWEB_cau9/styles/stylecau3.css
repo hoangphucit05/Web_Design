@@ -1,0 +1,26 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: red;
+    }
+    ol {
+      margin-left: 40px;
+    }
+    ol li {
+      font-weight: bold;
+      color: brown;
+    }
+    ol li ol li {
+      font-weight: normal;
+      color: blue;
+    }
+    .contact {
+      margin-top: 20px;
+      color: navy;
+      font-weight: bold;
+    }
+  

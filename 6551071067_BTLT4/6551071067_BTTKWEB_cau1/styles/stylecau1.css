@@ -1,0 +1,31 @@
+
+    body {
+      background-color: #FFFFCC; /* nền vàng nhạt */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: deeppink;
+      background-color: #FFCCFF; /* nền hồng nhạt */
+      padding: 10px;
+      margin: 0;
+      margin-bottom: 10px; /* thêm dòng này */
+    }
+    .blue {
+      color: blue;
+      font-style: italic;
+    }
+    .red {
+      color: crimson;
+      font-style: italic;
+    }
+    .green {
+      color: green;
+      font-style: italic;
+    }
+    hr {
+      width: 60%;
+      margin: 20px auto;
+    }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phiếu đăng ký tham gia</title>
+    <link rel="stylesheet" href="styles/stylecau8.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Phiếu đăng ký tham gia chương trình khuyến mãi</h2>
+        <form onsubmit="event.preventDefault(); document.getElementById('msg').style.display='block';">
+            <table>
+                <tr>
+                    <td>Họ và tên</td>
+                    <td><input type="text" value="Nguyễn Ngọc Quỳnh Nga"></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td><input type="text" value="2Bia Hùng Vương, Q10"></td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td><input type="text" value="0909097506"></td>
+                </tr>
+                <tr>
+                    <td>Phái</td>
+                    <td>
+                        <input type="radio" name="gender"> Nam
+                        <input type="radio" name="gender" checked> Nữ
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nghề nghiệp</td>
+                    <td><input type="text" value="Giáo viên"></td>
+                </tr>
+                <tr>
+                    <td>Chọn sản phẩm tham gia</td>
+                    <td>
+                        <select multiple size="4">
+                            <option selected>Kem đánh răng</option>
+                            <option>Bột giặt</option>
+                            <option>Dầu gội đầu</option>
+                            <option>Sữa tắm</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số người dự đoán tham gia</td>
+                    <td><input type="text" value="250000"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <input type="submit" value="Đồng ý">
+                    </td>
+                </tr>
+            </table>
+            <div id="msg" class="success" style="display:none;">
+                Bạn đã đăng ký thành công!!!
+            </div>
+        </form>
+    </div>
+</body>
+</html>
