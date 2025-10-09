@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tính lương tháng</title>
+  <script src="js_cau23.js" defer></script>
+  <style>
+    table {
+      border: 2px solid blue;
+      background-color: #ffcc99;
+      padding: 10px;
+      border-collapse: collapse; /* gộp đường viền */
+      margin-top: 20px;
+      width: 500px;
+      height: auto;
+      margin: 20px auto;
+    }
+    td {
+      border: 1px solid blue;   /* viền cho từng ô */
+      padding: 8px 10px;
+    }
+    input[type="text"], input[type="number"] {
+      width: 150px;
+    }
+    input[type="button"] {
+      background-color: #d0e5ff;
+      border: 1px solid blue;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: #b8dcff;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <table>
+      <tr>
+        <td>Lương</td>
+        <td><input type="number" id="luong" ></td>
+      </tr>
+      <tr>
+        <td>Hệ số lương</td>
+        <td><input type="number" id="heso"  step="0.1"></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="button" value="Tính lương tháng" onclick="tinhLuong()">
+        </td>
+      </tr>
+      <tr>
+        <td>Lương tháng</td>
+        <td><input type="text" id="luongthang" readonly></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
