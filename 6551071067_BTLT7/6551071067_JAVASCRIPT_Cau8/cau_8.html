@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Máy tính DOM & jQuery</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  body { font-family: Arial; margin: 30px; }
+  input[type="text"] { width: 60px; text-align: center; }
+  button { width: 40px; height: 30px; margin: 3px; }
+</style>
+</head>
+<body>
+<h3>Áp dụng DOM và jQuery để tạo chương trình máy tính:</h3>
+
+<input type="text" id="num1" value="0">
+<button class="op" data-op="+">+</button>
+<button class="op" data-op="-">-</button>
+<button class="op" data-op="*">x</button>
+<button class="op" data-op="/">/</button>
+<button class="op" data-op="^">^</button>
+<input type="text" id="num2" value="0">
+<span>=</span>
+<input type="text" id="result" readonly>
+
+<script>
+function calculate(op) {
+  var a = parseFloat(document.getElementById("num1").value);
+  var b = parseFloat(document.getElementById("num2").value);
+  var result;
+
+  switch(op) {
+    case '+': result = a + b; break;
+    case '-': result = a - b; break;
+    case '*': result = a * b; break;
+    case '/': result = b !== 0 ? a / b : "NaN"; break;
+    case '^': result = Math.pow(a, b); break;
+    default: result = "Err";
+  }
+
+  $("#result").val(result);
+}
+
+$(document).ready(function(){
+  $(".op").click(function(){
+    var op = $(this).data("op");
+    calculate(op);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Insert row in a table - w3resource</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<table id="sampleTable" border="1">
+  <tr><td>Row1 cell1</td><td>Row1 cell2</td></tr>
+  <tr><td>Row2 cell1</td><td>Row2 cell2</td></tr>
+</table><br>
+<input type="button" id="insertBtn" onclick="insert_Row()" value="Insert row">
+
+<script>
+function insert_Row() {
+  var table = document.getElementById("sampleTable");
+  var rowCount = table.rows.length + 1;
+  var newRow = "<tr><td>Row" + rowCount + " cell1</td><td>Row" + rowCount + " cell2</td></tr>";
+  $("#sampleTable").append(newRow);
+}
+
+$(document).ready(function(){
+  $("#insertBtn").click(function(){
+    insert_Row();
+  });
+});
+</script>
+</body>
+</html>

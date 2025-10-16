@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation Exercise</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+body { font-family: Arial, sans-serif; margin: 40px; }
+h2 { color: darkgreen; }
+label { display: inline-block; width: 230px; margin-bottom: 6px; }
+input[type="text"], select { width: 200px; padding: 4px; }
+button { margin: 8px 6px; padding: 6px 12px; font-size: 15px; }
+.error { color: red; font-size: 13px; margin-left: 6px; }
+</style>
+</head>
+
+<body>
+<h2>Personal Information</h2>
+<form id="infoForm">
+  <div><label>Enter name*:</label><input type="text" id="name"></div>
+  <div><label>Sex*:</label>
+    <input type="radio" name="sex" value="Male">Male
+    <input type="radio" name="sex" value="Female">Female
+  </div>
+  <div><label>Enter email address*:</label><input type="text" id="email"></div>
+  <div><label>Enter birthday (MM/DD/YYYY)*:</label><input type="text" id="birthday" placeholder="mm/dd/yyyy"></div>
+  <div><label>Enter street address (line 1)*:</label><input type="text" id="street"></div>
+  <div><label>Enter city*:</label><input type="text" id="city"></div>
+  <div><label>Select a region*:</label>
+    <select id="region">
+      <option value="">--Select--</option>
+      <option>North</option>
+      <option>South</option>
+      <option>East</option>
+      <option>West</option>
+    </select>
+  </div>
+  <div><label>Enter 5-digit ZIP code*:</label><input type="text" id="zip"></div>
+
+  <div>
+    <button type="button" id="finish">Finished</button>
+    <button type="button" id="clear">Clear</button>
+  </div>
+</form>
+
+<script>
+$(document).ready(function(){
+  $("#clear").click(function(){
+    $("#infoForm")[0].reset();
+  });
+
+  $("#finish").click(function(){
+
+    let name = $("#name").val().trim();
+    let sex = $("input[name='sex']:checked").val();
+    let email = $("#email").val().trim();
+    let birthday = $("#birthday").val().trim();
+    let street = $("#street").val().trim();
+    let city = $("#city").val().trim();
+    let region = $("#region").val();
+    let zip = $("#zip").val().trim();
+
+
+    if(!name || !sex || !email || !birthday || !street || !city || !region || !zip){
+      alert("Vui lòng nhập đầy đủ các trường có dấu *");
+      return;
+    }
+
+
+    let emailPattern = /^[^@.\s]+(\.[^@.\s]+)*@[^@.\s]+\.[^@.\s]+$/;
+    if(!emailPattern.test(email)){
+      alert("Email không hợp lệ. Vui lòng nhập lại!");
+      return;
+    }
+
+  
+    let datePattern = /^(\d{2})[\/\-](\d{2})[\/\-](\d{4})$/;
+    let match = birthday.match(datePattern);
+    if(!match){
+      alert("Ngày sinh phải có định dạng mm/dd/yyyy hoặc mm-dd-yyyy");
+      return;
+    }
+    let mm = parseInt(match[1]), dd = parseInt(m

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>Chuyển hướng đến đường link</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Nhập đường link và nhấn "Submit" để chuyển hướng:</h1>
+
+<form id="linkForm">
+  <input type="text" id="linkInput" placeholder="Nhập đường link">
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function handleLinkSubmit() {
+  var link = document.getElementById("linkInput").value.trim();
+  if (link === "") {
+    alert("Vui lòng nhập đường link!");
+    return;
+  }
+
+  if (!/^https?:\/\//i.test(link)) {
+    link = "https://" + link;
+  }
+
+  var confirmRedirect = confirm("Bạn có chắc muốn chuyển đến: " + link + " ?");
+  if (confirmRedirect) {
+    window.location.href = link;
+  }
+}
+
+$(document).ready(function(){
+  $("#linkForm").submit(function(event){
+    event.preventDefault();
+    handleLinkSubmit();
+  });
+});
+</script>
+</body>
+</html>
